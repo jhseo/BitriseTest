@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0DC5771682DF5BF66E7ACED3 /* Pods_BitriseTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2912FCC939C9FD5775C8777C /* Pods_BitriseTest.framework */; };
+		43683E39251C293C00C911A0 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43683E38251C293C00C911A0 /* Alamofire.framework */; };
 		43E0715A251B446000988169 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E07159251B446000988169 /* AppDelegate.swift */; };
 		43E0715C251B446000988169 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E0715B251B446000988169 /* SceneDelegate.swift */; };
 		43E0715E251B446000988169 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E0715D251B446000988169 /* ViewController.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		2912FCC939C9FD5775C8777C /* Pods_BitriseTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitriseTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43683E38251C293C00C911A0 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		43E07156251B446000988169 /* BitriseTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitriseTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43E07159251B446000988169 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43E0715B251B446000988169 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43683E39251C293C00C911A0 /* Alamofire.framework in Frameworks */,
 				0DC5771682DF5BF66E7ACED3 /* Pods_BitriseTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -119,13 +122,13 @@
 				67613AA9D8D300BE20349D36 /* Pods-BitriseTestTests.debug.xcconfig */,
 				8F3E46D5104A2FAAC7034DEB /* Pods-BitriseTestTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 		806DA67BB7078CC0D879A8D6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				43683E38251C293C00C911A0 /* Alamofire.framework */,
 				2912FCC939C9FD5775C8777C /* Pods_BitriseTest.framework */,
 				72C805ADBEE3B6853F6D11BE /* Pods_BitriseTestTests.framework */,
 			);
@@ -144,6 +147,7 @@
 				43E07153251B446000988169 /* Frameworks */,
 				43E07154251B446000988169 /* Resources */,
 				8F5FC70541C7C2F17B6BAF03 /* [CP] Embed Pods Frameworks */,
+				43683E37251C28CC00C911A0 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -232,6 +236,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		43683E37251C28CC00C911A0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
 		65F5BACEE95FBC018C37B5AB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -465,10 +487,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 936JHHB5Z3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = BitriseTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jhseo.BitriseTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -484,10 +511,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 936JHHB5Z3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = BitriseTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jhseo.BitriseTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
